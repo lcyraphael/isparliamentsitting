@@ -39,7 +39,7 @@ def check_if_sitting(d):
                 sit = {"ans": "No", "info": "The House of Commons has adjourned for the " + recess_period.name + " recess."}
     return sit
 
-sitting = check_if_sitting(date(2017,1,14))
+sitting = check_if_sitting(today)
 
 app = Flask(__name__)
 
