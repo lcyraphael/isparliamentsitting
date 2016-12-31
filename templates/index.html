@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Is Parliament Sitting?</title>
+
+    <meta name="description" content="Is the UK House of Commons sitting today?" />
+
+    <meta name="keywords" content="UK, parliament, house-of-commons, recess, british, adjournment" />
+
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.png') }}">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="jumbotron">
+            <h1> {{ data.ans }}</h1>
+            {% if 'url' in data.keys(): %}
+                <div class=".text-muted"><a href="{{ data.url }}">{{ data.info }}</a></div>
+            {% else %}
+                <div class=".text-muted">{{ data.info }}</div>
+            {% endif %}
+        </div>
+
+    </div>
+
+</body>
+
+</html>
