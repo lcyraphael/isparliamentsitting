@@ -32,11 +32,10 @@ for recess_period, lst in recess_dates.items():
 def check_if_sitting(d):
     sit = {"ans": "Yes", "info": "Here is the Order of Business.", "url": "https://www.parliament.uk/business/publications/business-papers/commons/agenda-and-order-of-business"}
     if not cal.is_working_day(d):
-        sit = {"ans": "No", "info":"Today is not a working day."}
-    else:
-        for recess_period, dt_pair in recess_dates.items():
-            if dt_pair[0] < d < dt_pair[1]:
-                sit = {"ans": "No", "info": "The House of Commons has adjourned for the " + recess_period.name + " recess."}
+        sit = {"ans": "No", "info": "Today is not a working day."}
+    for recess_period, dt_pair in recess_dates.items():
+        if dt_pair[0] < d < dt_pair[1]:
+            sit = {"ans": "No", "info": "The House has adjourned for the " + recess_period.name + " recess. It returns on " + dt_pair[1].strftime("%d %B %Y") + "."}
     return sit
 
 sitting = check_if_sitting(today)

@@ -12,6 +12,8 @@
 
     <link href="https://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
 
+    <link href="/static/index.css" rel="stylesheet">
+
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.png') }}">
 
 </head>
@@ -21,7 +23,7 @@
     <div class="container">
 
         <div class="jumbotron">
-            <h1> {{ data.ans }}</h1>
+            <h1>{{ data.ans }}</h1>
             {% if 'url' in data.keys(): %}
                 <div class=".text-muted"><a href="{{ data.url }}">{{ data.info }}</a></div>
             {% else %}
