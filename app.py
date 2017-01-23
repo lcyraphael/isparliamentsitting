@@ -30,7 +30,7 @@ for recess_period, lst in recess_dates.items():
     recess_dates[recess_period] = recess_pair
 
 def check_if_sitting(d):
-    sit = {"ans": "Yes", "info": "Here is the Order of Business.", "url": "https://www.parliament.uk/business/publications/business-papers/commons/agenda-and-order-of-business"}
+    sit = {"ans": "Yes", "info": "Here is the <a href=\"https://www.parliament.uk/business/publications/business-papers/commons/agenda-and-order-of-business\">Order of Business<\a>."}
     if not cal.is_working_day(d):
         sit = {"ans": "No", "info": "Today is not a working day."}
     for recess_period, dt_pair in recess_dates.items():
