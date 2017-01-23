@@ -34,8 +34,10 @@
     <div class="container">
 
         <div class="jumbotron">
+{% autoescape off %}
             <h1>{{ data.ans }}</h1>
             <div class=".text-muted">{{ data.info }}</div>
+{% endautoescape %}
         </div>
 
     </div>
