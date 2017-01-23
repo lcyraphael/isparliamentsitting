@@ -35,11 +35,7 @@
 
         <div class="jumbotron">
             <h1>{{ data.ans }}</h1>
-            {% if 'url' in data.keys(): %}
-                <div class=".text-muted"><a href="{{ data.url }}">{{ data.info }}</a></div>
-            {% else %}
-                <div class=".text-muted">{{ data.info }}</div>
-            {% endif %}
+            <div class=".text-muted">{{ data.info }}</div>
         </div>
 
     </div>
