@@ -1,2 +1,2 @@
 # isparliamentsitting
-Is the UK House of Commons sitting today?
+Wondering if the Houses of Parliament (U.K.) are sitting today? Wonder no more!
