@@ -35,6 +35,10 @@ lords_recess_dates = {
     recess_period("Summer"): ["20 July 2017", "5 September 2017"]
 }
 
+dissolution_dates = {
+    recess_period("Dissolution"): ["3 May 2017", "19 June 2017"]
+}
+
 def convert_to_dt(recess_dates):
     recess_dates_in_dt = {}
     for recess_period, lst in recess_dates.items():
@@ -49,6 +53,14 @@ def convert_to_dt(recess_dates):
 # dictionaries with recess dates as datetime objects
 commons_recess = convert_to_dt(commons_recess_dates)
 lords_recess = convert_to_dt(lords_recess_dates)
+dissolution = convert_to_dt(dissolution_dates)
+
+def is_parliament_dissolved(date):
+    sit = {"ans": False}
+    for recess_period, dt_pair in dissolution.items():
+        if dt_pair[0] < date < dt_pair[1]:
+            sit = {"ans": True, "returns_on": dt_pair[1].strftime("%d %B %Y")}
+    return sit
 
 def is_commons_sitting(date):
     sit = {"ans": True}
@@ -67,7 +79,9 @@ def is_lords_sitting(date):
 def is_parliament_sitting(date): 
     commons = is_commons_sitting(date)
     lords = is_lords_sitting(date)
-    if not cal.is_working_day(date):
+    if is_parliament_dissolved(date)["ans"]:
+        sit = {"ans": "No", "info": "Parliament has been dissolved for the General Election. State Opening is scheduled for %s." % is_parliament_dissolved(date)["returns_on"]}
+    elif not cal.is_working_day(date):
         sit = {"ans": "No", "info": "Today is not a working day."}
     elif commons["ans"] and lords["ans"]:
         sit = {"ans": "Yes", "info": "Both Houses are sitting. Here are the Orders of Business for the <a href=\"https://www.parliament.uk/business/publications/business-papers/commons/agenda-and-order-of-business\" target=\"_blank\">Commons</a> and <a href=\"https://www.parliament.uk/business/publications/business-papers/lords/lords-business\" target=\"_blank\">Lords</a>."}
