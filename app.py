@@ -36,7 +36,7 @@ lords_recess_dates = {
 }
 
 dissolution_dates = {
-    recess_period("Dissolution"): ["3 May 2017", "19 June 2017"]
+    recess_period("Dissolution"): ["3 May 2017", "21 June 2017"]
 }
 
 def convert_to_dt(recess_dates):
@@ -76,7 +76,7 @@ def is_lords_sitting(date):
             sit = {"ans": False, "returns_on": dt_pair[1].strftime("%d %B %Y")}
     return sit
 
-def is_parliament_sitting(date): 
+def is_parliament_sitting(date):
     commons = is_commons_sitting(date)
     lords = is_lords_sitting(date)
     if is_parliament_dissolved(date)["ans"]:
@@ -91,7 +91,7 @@ def is_parliament_sitting(date):
         sit = {"ans": "Yes", "info": "Only the House of Lords is sitting (<a href=\"https://www.parliament.uk/business/publications/business-papers/lords/lords-business\" target=\"_blank\">Order of Business</a>). The House of Commons returns on %s." % commons["returns_on"]}
     elif commons["returns_on"] == lords["returns_on"]:
         sit = {"ans": "No", "info": "Both Houses have adjourned. They return on %s." % commons["returns_on"]}
-    else: 
+    else:
         sit = {"ans": "No", "info": "Both Houses have adjourned. The House of Commons returns on %s and the Lords on %s." % (commons["returns_on"], lords["returns_on"])}
     return sit
 
