@@ -18,7 +18,9 @@ commons_recess_dates = {
     recess_period("Christmas"):    ["20 December 2016", "9 January 2017"],
     recess_period("February"): ["9 February 2017", "20 February 2017"],
     recess_period("Easter"):   ["30 March 2017", "18 April 2017"],
-    recess_period("Whitsun"):  ["25 May 2017", "5 June 2017"]
+    recess_period("Whitsun"):  ["25 May 2017", "5 June 2017"],
+    recess_period("Summer"): ["20 July 2017", "5 September 2017"],
+    recess_period("Conference"): ["14 September 2017", "9 October 2017"]
 }
 
 lords_recess_dates = {
@@ -32,7 +34,8 @@ lords_recess_dates = {
     recess_period("Easter"):   ["6 April 2017", "24 April 2017"],
     recess_period("May Bank Holiday"):   ["27 April 2017", "2 May 2017"],
     recess_period("Whitsun"):  ["25 May 2017", "6 June 2017"],
-    recess_period("Summer"): ["20 July 2017", "5 September 2017"]
+    recess_period("Summer"): ["20 July 2017", "5 September 2017"],
+    recess_period("Conference"): ["14 September 2017", "9 October 2017"]
 }
 
 dissolution_dates = {
