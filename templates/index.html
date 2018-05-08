@@ -8,7 +8,7 @@
 
     <meta name="keywords" content="UK, parliament, house-of-commons, recess, british, adjournment" />
 
-    <link href="https://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 
     <link href="/static/jumbotron-narrow.css" rel="stylesheet">
 
@@ -36,7 +36,7 @@
         <div class="jumbotron">
 {% autoescape off %}
             <h1>{{ data.ans }}</h1>
-            <div class=".text-muted">{{ data.info }}</div>
+            <div class="lead">{{ data.info }}</div>
 {% endautoescape %}
         </div>
 

@@ -51,7 +51,10 @@ lords_recess_dates = {
     recess_period("February half term"): ["8 February 2018", "20 February 2018"],
     recess_period("Easter"): ["29 March 2018", "16 April 2018"],
     recess_period("May Day"):   ["3 May 2018", "8 May 2018"],
-    recess_period("Whitsun"):  ["24 May 2018", "4 June 2018"]
+    recess_period("Whitsun"):  ["24 May 2018", "4 June 2018"],
+    recess_period("Summer"):  ["24 July 2018", "4 September 2018"],
+    recess_period("Summer"):  ["13 September 2018", "9 October 2018"],
+    recess_period("Autumn"):  ["6 November 2018", "12 November 2018"]
 }
 
 dissolution_dates = {
